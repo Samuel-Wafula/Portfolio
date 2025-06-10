@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Samuel Wafula's Portfolio - Cybersecurity Enthusiast and Web Developer showcasing projects, skills, and experience" />
+  <meta name="keywords" content="cybersecurity, web development, portfolio, Samuel Wafula, security analyst" />
+  <meta name="author" content="Samuel Wafula" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>Samuel Portfolio</title>
+  <style>
+    :root {
+      --primary-color: #1e1e2f;
+      --secondary-color: #2d2d44;
+      --accent-color: #00bfff;
+      --text-color: #333;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --transition: all 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
+      opacity: 0.1;
+    }
+
+    header img {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+      border-color: var(--accent-color);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    nav a:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .resume-item, .project, .lab {
+      background: var(--card-bg);
+      padding: 2rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .resume-item:hover, .project:hover, .lab:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-category h4 {
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .lab img {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .lab img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: var(--transition);
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .contact-card a:hover {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 3rem 1rem;
+      }
+
+      header img {
+        width: 150px;
+        height: 150px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="me.jpg" alt="Samuel Wafula's profile picture" loading="lazy" />
+    <h1>SAMUEL WAFULA</h1>
+    <p>Cybersecurity Enthusiast | Web Developer | Problem Solver</p>
+    <nav aria-label="Main navigation">
+      <a href="#resume" aria-label="Go to Resume section">Resume</a>
+      <a href="#projects" aria-label="Go to Projects section">Projects</a>
+      <a href="#labs" aria-label="Go to Lab Challenges section">Lab Challenges</a>
+      <a href="#contact" aria-label="Go to Contact section">Contact</a>
+    </nav>
+  </header>
+
+  <section id="resume">
+    <h2>Resume</h2>
+
+    <div class="resume-item">
+      <h3>Education</h3>
+      <p>B.Sc. Applied Computing , KCA University, 2021–Present</p>
+    </div>
+
+    <div class="resume-item">
+      <h3>Work Experience</h3>
+      <p>ATTACHEE	          May 2024 – August 2024</p>
+       <p>Ministry of INFORMATION, COMMUNICATION and THE DIGITAL ECONOMY
+        </p>
+    </div>
+
+    <div class="resume-item">
+      <h3>Certifications</h3>
+      <ul>
+        <li>SOC Analyst - in progress</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <h3>Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Technical Skills</h4>
+          <ul>
+            <li>Python</li>
+            <li>HTML/CSS/JS</li>
+            <li>Linux</li>
+            <li>Git</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Security Tools</h4>
+          <ul>
+            <li>Burp Suite</li>
+            <li>Nmap</li>
+            <li>Metasploit</li>
+            <li>Wireshark</li>
+            <li>OWASP Top 10</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Security Knowledge</h4>
+          <ul>
+            <li>Incident response and recovery</li>
+            <li>Technical proficiency</li>
+            <li>Threat intelligence and analysis</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Soft Skills</h4>
+          <ul>
+            <li>Communication and collaboration</li>
+            <li>Continuous learning</li>
+            <li>Adaptability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>A responsive portfolio site built with HTML, CSS, and JavaScript to showcase skills and achievements.</p>
+    </div>
+
+    <div class="project">
+      <h3>Garage management system</h3>
+      <p>My university school project that I built to help streamline operations in a garage its main function
+        was to allow customers to book services and check their service history, also the allocation 
+        of mechanics to a particular vehicle for accountability and finally a billing system for the service. 
+        There will be a service deposit then when finally done there will be the final payment.
+      </p>
+    </div>
+
+    <div class="project">
+        <h3>Vulnerability Scanner</h3>
+        <p>A basic vulnerability scanner using Python and Nmap for identifying open ports and services.</p>
+      </div>
+  </section>
+
+  <section id="labs">
+    <h2>Lab Challenges</h2>
+
+    <div class="lab">
+      <h3>Challenge: SQL Injection Lab</h3>
+      <p><strong>Problem:</strong> A login page vulnerable to SQL injection.</p>
+      <p><strong>Approach:</strong> Used `' OR '1'='1` to bypass authentication and extract user data.</p>
+      <p><strong>Tools:</strong> Burp Suite, sqlmap</p>
+      <p><strong>Lessons:</strong> Importance of input sanitization and parameterized queries.</p>
+      <img src="screenshot-sql.png" alt="SQL Injection Lab demonstration showing successful bypass" loading="lazy" />
+    </div>
+
+    <div class="lab">
+      <h3>Challenge: Linux Privilege Escalation</h3>
+      <p><strong>Problem:</strong> Gaining root access on a misconfigured Linux machine.</p>
+      <p><strong>Approach:</strong> Used SUID binary exploitation to spawn a root shell.</p>
+      <p><strong>Tools:</strong> LinPEAS, GTFOBins</p>
+      <p><strong>Lessons:</strong> Always check SUID/SGID and PATH misconfigurations.</p>
+      <img src="screenshot-linpeas.png" alt="Linux Privilege Escalation demonstration showing successful root access" loading="lazy" />
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out through any of the following channels:</p>
+  
+    <div class="contact-links">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <a href="mailto:sammysim234@gmail.com">sammysim234@gmail.com</a>
+      </div>
+  
+      <div class="contact-card">
+        <h3>Phone</h3>
+        <a href="tel:+254741366218">+254 741 366 218</a>
+      </div>
+  
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/samuel-simiyu-089a0a32a/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      </div>
+  
+      <div class="contact-card">
+        <h3>GitHub</h3>
+        <a href="https://github.com/Samuel-Wafula/github-pages" target="_blank" rel="noopener noreferrer">View Projects</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2025 Samuel Wafula | All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        if (img.complete) {
+          img.classList.add('loaded');
+        } else {
+          img.addEventListener('load', function() {
+            img.classList.add('loaded');
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

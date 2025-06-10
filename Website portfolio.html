@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samuel Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    header img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .resume-item, .project, .lab {
+      background: white;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .lab img {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 1rem;
+      border-radius: 6px;
+    }
+
+    footer {
+      background: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="me.jpg" alt="Your Photo" />
+    <h1>SAMUEL WAFULA</h1>
+    <p>Cybersecurity Enthusiast | Web Developer | Problem Solver</p>
+    <nav>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#labs">Lab Challenges</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="resume">
+    <h2>Resume</h2>
+
+    <div class="resume-item">
+      <h3>Education</h3>
+      <p>B.Sc. Applied Computing , KCA University, 2021–Present</p>
+    </div>
+
+    <div class="resume-item">
+      <h3>Work Experience</h3>
+      <p>ATTACHEE	          May 2024 – August 2024</p>
+       <p>Ministry of INFORMATION, COMMUNICATION and THE DIGITAL ECONOMY
+        </p>
+    </div>
+
+    <div class="resume-item">
+      <h3>Certifications</h3>
+      <ul>
+        <li>SOC Analyst - in progress</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <h3>Skills</h3>
+      <p>Python, HTML/CSS/JS, Linux, Git, Burp Suite, Nmap, Metasploit, Wireshark, OWASP Top 10</p>
+    <p>Incident response and recovery</p> 
+    <p>Technical proficiency and security knowledge</p> <p>Threat intelligence and analysis</p> 
+    <p>Communication and collaboration</p> <p>Continuous learning and adaptability</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>A responsive portfolio site built with HTML, CSS, and JavaScript to showcase skills and achievements.</p>
+    </div>
+
+    <div class="project">
+      <h3>Garage management system</h3>
+      <p>My university school project that I built to help streamline operations in a garage its main function
+        was to allow customers to book services and check their service history, also the allocation 
+        of mechanics to a particular vehicle for accountability and finally a billing system for the service. 
+        There will be a service deposit then when finally done there will be the final payment.
+      </p>
+    </div>
+
+    <div class="project">
+        <h3>Vulnerability Scanner</h3>
+        <p>A basic vulnerability scanner using Python and Nmap for identifying open ports and services.</p>
+      </div>
+  </section>
+
+  <section id="labs">
+    <h2>Lab Challenges</h2>
+
+    <div class="lab">
+      <h3>Challenge: SQL Injection Lab</h3>
+      <p><strong>Problem:</strong> A login page vulnerable to SQL injection.</p>
+      <p><strong>Approach:</strong> Used `' OR '1'='1` to bypass authentication and extract user data.</p>
+      <p><strong>Tools:</strong> Burp Suite, sqlmap</p>
+      <p><strong>Lessons:</strong> Importance of input sanitization and parameterized queries.</p>
+      <img src="screenshot-sql.png" alt="SQL Injection Screenshot"/>
+    </div>
+
+    <div class="lab">
+      <h3>Challenge: Linux Privilege Escalation</h3>
+      <p><strong>Problem:</strong> Gaining root access on a misconfigured Linux machine.</p>
+      <p><strong>Approach:</strong> Used SUID binary exploitation to spawn a root shell.</p>
+      <p><strong>Tools:</strong> LinPEAS, GTFOBins</p>
+      <p><strong>Lessons:</strong> Always check SUID/SGID and PATH misconfigurations.</p>
+      <img src="screenshot-linpeas.png" alt="Privilege Escalation Screenshot"/>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out through any of the following channels:</p>
+  
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    ">
+  
+      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h3>Email</h3>
+        <p><a href="mailto:you@example.com">sammysim234@gmail.com</a></p>
+      </div>
+  
+      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h3>Phone</h3>
+        <p><a href="tel">+254741366218</a></p>
+      </div>
+  
+      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h3>LinkedIn</h3>
+        <p><a href="https://linkedin.com/in/yourname" target="_blank">https://www.linkedin.com/in/samuel-simiyu-089a0a32a/</a></p>
+      </div>
+  
+      <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/yourusername" target="_blank">https://github.com/Samuel-Wafula/github-pages</a></p>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2025 Samuel Wafula | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

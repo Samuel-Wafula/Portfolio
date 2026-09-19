@@ -1,831 +1,649 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-        content="Samuel Wafula - Cybersecurity and Digital Forensics professional portfolio, featuring IT support, cybersecurity projects, digital forensics, security labs and technical skills.">
-
-  <meta name="keywords"
-        content="Samuel Wafula, Cybersecurity, Digital Forensics, IT Support, Network Security, Security Analyst, Kenya">
-
-  <meta name="author" content="Samuel Wafula">
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <title>Samuel Wafula | Cybersecurity & Digital Forensics</title>
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-
-    /* =========================================================
-       ROOT
-    ========================================================= */
-
-    :root {
-      --bg: #07111f;
-      --bg-light: #0b1728;
-      --card: rgba(14, 30, 50, 0.75);
-      --card-solid: #0e1e32;
-
-      --primary: #38bdf8;
-      --primary-dark: #0284c7;
-      --secondary: #22d3ee;
-
-      --text: #f1f5f9;
-      --text-light: #cbd5e1;
-      --muted: #94a3b8;
-
-      --border: rgba(148, 163, 184, 0.15);
-
-      --success: #34d399;
-
-      --radius: 18px;
-
-      --transition: all 0.3s ease;
-    }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(56,189,248,0.08), transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(34,211,238,0.06), transparent 30%),
-        var(--bg);
-
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-
-      z-index: 1000;
-
-      background: rgba(7,17,31,0.82);
-      backdrop-filter: blur(15px);
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-
-      padding: 1rem 1.5rem;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: "Space Mono", monospace;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    .logo span {
-      color: white;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-      min-height: 100vh;
-
-      max-width: 1200px;
-      margin: auto;
-
-      padding: 9rem 1.5rem 5rem;
-
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-
-      align-items: center;
-
-      gap: 4rem;
-    }
-
-    .hero-content {
-      animation: fadeUp 0.8s ease;
-    }
-
-    .terminal-label {
-      font-family: "Space Mono", monospace;
-      color: var(--success);
-
-      font-size: 0.9rem;
-
-      margin-bottom: 1.2rem;
-    }
-
-    .terminal-label::before {
-      content: "> ";
-      color: var(--primary);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.7rem, 6vw, 5rem);
-      line-height: 1.05;
-
-      margin-bottom: 1.5rem;
-
-      letter-spacing: -2px;
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-    }
-
-    .hero-description {
-      max-width: 650px;
-
-      font-size: 1.15rem;
-
-      color: var(--text-light);
-
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 0.85rem 1.4rem;
-
-      border-radius: 10px;
-
-      text-decoration: none;
-
-      font-weight: 600;
-
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #03101c;
-    }
-
-    .btn-primary:hover {
-      background: var(--secondary);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(56,189,248,0.2);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-3px);
-    }
-
-
-    /* =========================================================
-       PROFILE IMAGE
-    ========================================================= */
-
-    .hero-image {
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    .profile-container {
-      position: relative;
-    }
-
-    .profile-container::before {
-      content: "";
-
-      position: absolute;
-
-      width: 320px;
-      height: 320px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(56,189,248,0.25);
-
-      animation: pulse 4s infinite;
-    }
-
-    .profile-image {
-      width: 280px;
-      height: 280px;
-
-      object-fit: cover;
-
-      border-radius: 50%;
-
-      border: 4px solid var(--primary);
-
-      box-shadow:
-        0 0 40px rgba(56,189,248,0.25),
-        0 20px 60px rgba(0,0,0,0.4);
-
-      position: relative;
-
-      z-index: 2;
-    }
-
-
-    /* =========================================================
-       SECTIONS
-    ========================================================= */
-
-    section {
-      max-width: 1200px;
-
-      margin: auto;
-
-      padding: 6rem 1.5rem;
-    }
-
-    .section-heading {
-      margin-bottom: 3rem;
-    }
-
-    .section-label {
-      font-family: "Space Mono", monospace;
-
-      color: var(--primary);
-
-      font-size: 0.85rem;
-
-      margin-bottom: 0.5rem;
-    }
-
-    .section-heading h2 {
-      font-size: 2.5rem;
-
-      line-height: 1.2;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-
-      margin-top: 0.8rem;
-
-      max-width: 700px;
-    }
-
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns: 1.2fr 0.8fr;
-
-      gap: 2rem;
-    }
-
-    .about-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      padding: 2rem;
-
-      border-radius: var(--radius);
-
-      backdrop-filter: blur(10px);
-    }
-
-    .about-card p {
-      color: var(--text-light);
-
-      margin-bottom: 1rem;
-    }
-
-    .highlight {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-
-    /* =========================================================
-       STATS
-    ========================================================= */
-
-    .stats {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 1rem;
-    }
-
-    .stat {
-      background: var(--card-solid);
-
-      border: 1px solid var(--border);
-
-      border-radius: 14px;
-
-      padding: 1.5rem;
-
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-
-      font-size: 1.7rem;
-
-      color: var(--primary);
-    }
-
-    .stat span {
-      color: var(--muted);
-
-      font-size: 0.85rem;
-    }
-
-
-    /* =========================================================
-       EXPERIENCE
-    ========================================================= */
-
-    .timeline {
-      border-left: 2px solid rgba(56,189,248,0.3);
-
-      padding-left: 2rem;
-    }
-
-    .timeline-item {
-      position: relative;
-
-      margin-bottom: 2rem;
-
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      padding: 2rem;
-
-      border-radius: var(--radius);
-    }
-
-    .timeline-item::before {
-      content: "";
-
-      position: absolute;
-
-      left: -2.55rem;
-
-      top: 2rem;
-
-      width: 12px;
-      height: 12px;
-
-      background: var(--primary);
-
-      border-radius: 50%;
-
-      box-shadow: 0 0 15px rgba(56,189,248,0.7);
-    }
-
-    .timeline-date {
-      font-family: "Space Mono", monospace;
-
-      color: var(--primary);
-
-      font-size: 0.8rem;
-    }
-
-    .timeline-item h3 {
-      margin: 0.4rem 0;
-    }
-
-    .timeline-item h4 {
-      color: var(--muted);
-
-      font-weight: 500;
-
-      margin-bottom: 1rem;
-    }
-
-    .timeline-item ul {
-      padding-left: 1.2rem;
-
-      color: var(--text-light);
-    }
-
-
-    /* =========================================================
-       SKILLS
-    ========================================================= */
-
-    .skills-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 1.5rem;
-    }
-
-    .skill-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      border-radius: var(--radius);
-
-      padding: 1.8rem;
-
-      transition: var(--transition);
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-
-      border-color: rgba(56,189,248,0.4);
-    }
-
-    .skill-card h3 {
-      margin-bottom: 1rem;
-
-      color: var(--primary);
-    }
-
-    .skill-tags {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 0.6rem;
-    }
-
-    .tag {
-      padding: 0.45rem 0.75rem;
-
-      background: rgba(56,189,248,0.08);
-
-      border: 1px solid rgba(56,189,248,0.15);
-
-      border-radius: 6px;
-
-      font-size: 0.8rem;
-
-      color: var(--text-light);
-    }
-
-
-    /* =========================================================
-       PROJECTS
-    ========================================================= */
-
-    .projects-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      border-radius: var(--radius);
-
-      padding: 2rem;
-
-      transition: var(--transition);
-
-      display: flex;
-
-      flex-direction: column;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-
-      border-color: rgba(56,189,248,0.4);
-
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
-
-    .project-number {
-      font-family: "Space Mono", monospace;
-
-      color: var(--primary);
-
-      font-size: 0.8rem;
-
-      margin-bottom: 1rem;
-    }
-
-    .project-card h3 {
-      font-size: 1.4rem;
-
-      margin-bottom: 0.8rem;
-    }
-
-    .project-card p {
-      color: var(--text-light);
-
-      margin-bottom: 1.5rem;
-    }
-
-    .project-tech {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 0.5rem;
-
-      margin-top: auto;
-    }
-
-    .tech {
-      color: var(--primary);
-
-      font-family: "Space Mono", monospace;
-
-      font-size: 0.7rem;
-    }
-
-
-    /* =========================================================
-       LABS
-    ========================================================= */
-
-    .lab-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 1.5rem;
-    }
-
-    .lab-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      border-radius: var(--radius);
-
-      overflow: hidden;
-
-      transition: var(--transition);
-    }
-
-    .lab-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .lab-card img {
-      width: 100%;
-
-      height: 220px;
-
-      object-fit: cover;
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .lab-content {
-      padding: 1.7rem;
-    }
-
-    .lab-content h3 {
-      margin-bottom: 1rem;
-    }
-
-    .lab-content p {
-      color: var(--text-light);
-
-      margin-bottom: 0.7rem;
-    }
-
-
-    /* =========================================================
-       RESEARCH
-    ========================================================= */
-
-    .research-card {
-      background:
-        linear-gradient(
-          135deg,
-          rgba(56,189,248,0.08),
-          rgba(34,211,238,0.03)
-        );
-
-      border: 1px solid rgba(56,189,248,0.2);
-
-      border-radius: var(--radius);
-
-      padding: 3rem;
-    }
-
-    .research-card h3 {
-      font-size: 1.7rem;
-
-      margin-bottom: 1rem;
-
-      color: var(--primary);
-    }
-
-    .research-card p {
-      color: var(--text-light);
-
-      max-width: 850px;
-    }
-
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-
-    .contact-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 1rem;
-    }
-
-    .contact-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      border-radius: 14px;
-
-      padding: 1.5rem;
-
-      text-decoration: none;
-
-      transition: var(--transition);
-    }
-
-    .contact-card:hover {
-      border-color: var(--primary);
-
-      transform: translateY(-4px);
-    }
-
-    .contact-card span {
-      display: block;
-
-      color: var(--muted);
-
-      font-size: 0.8rem;
-
-      margin-bottom: 0.3rem;
-    }
-
-    .contact-card strong {
-      color: var(--text);
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      border-top: 1px solid var(--border);
-
-      padding: 2rem 1.5rem;
-
-      text-align: center;
-
-      color: var(--muted);
-
-      font-size: 0.85rem;
-    }
-
-
-    /* =========================================================
-       ANIMATIONS
-    ========================================================= */
-
-    @keyframes fadeUp {
-
-      from {
-        opacity: 0;
-
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-
-        transform: translateY(0);
-      }
-
-    }
-
-    @keyframes pulse {
-
-      0%, 100% {
-        transform: scale(1);
-
-        opacity: 0.5;
-      }
-
-      50% {
-        transform: scale(1.08);
-
-        opacity: 1;
-      }
-
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 900px) {
-
-      .hero {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        padding-top: 8rem;
-      }
-
-      .hero-description {
-        margin-left: auto;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Samuel Simiyu | Cybersecurity & Digital Forensics</title>
+
+    <meta name="description" content="Samuel Simiyu - Cybersecurity and Digital Forensics professional, researcher, and IT specialist.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0f172a;
+            border-bottom: 1px solid #1e293b;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 8%;
+            background:
+                radial-gradient(circle at top right, #123b5d 0%, transparent 35%),
+                linear-gradient(135deg, #0b1120, #111827);
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text .small-title {
+            color: #38bdf8;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #94a3b8;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #06121c;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #334155;
+            color: #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        /* PROFILE IMAGE */
+        .profile-container {
+            flex: 0 0 320px;
+            text-align: center;
+        }
+
+        .profile-container img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            box-shadow: 0 0 45px rgba(56, 189, 248, 0.25);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #f8fafc;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        /* ABOUT */
+        .about-box {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 35px;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card h4 {
+            color: #f8fafc;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #94a3b8;
+        }
+
+        .date {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .skill-box h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .skill-box ul {
+            list-style: none;
+        }
+
+        .skill-box li {
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+
+        .skill-box li::before {
+            content: "▹ ";
+            color: #38bdf8;
+        }
+
+        /* PROJECTS */
+        .project-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        .tech {
+            color: #7dd3fc;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* RESEARCH */
+        .research {
+            background: #0f172a;
+        }
+
+        .research-box {
+            background: #111827;
+            border-left: 4px solid #38bdf8;
+            padding: 35px;
+            border-radius: 8px;
+        }
+
+        .research-box h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .research-box p {
+            color: #cbd5e1;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            text-align: center;
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 45px;
+            border-radius: 12px;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-links a {
+            color: #38bdf8;
+            text-decoration: none;
+            border: 1px solid #334155;
+            padding: 10px 18px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: #38bdf8;
+            color: #06121c;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #070b14;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile-container {
+                flex: none;
+            }
+
+            .profile-container img {
+                width: 230px;
+                height: 230px;
+            }
+
+            .cards,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Samuel Simiyu</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <div class="hero-text">
+
+                <div class="small-title">
+                    Cybersecurity • Digital Forensics • Research
+                </div>
+
+                <h1>
+                    Samuel <span>Simiyu</span>
+                </h1>
+
+                <p>
+                    Cybersecurity and Digital Forensics professional with a
+                    background in Information Security, IT support, network
+                    security, digital investigations and technology research.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Contact Me
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="profile-container">
+
+                <img src="me.png" alt="Samuel Simiyu">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-container">
+
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Cybersecurity, technology and continuous learning</p>
+            </div>
+
+            <div class="about-box">
+
+                <p>
+                    I am a Cybersecurity and Digital Forensics professional
+                    with a Bachelor of Science in Applied Computing,
+                    specializing in Information Security and Digital
+                    Forensics.
+                </p>
+
+                <p>
+                    I am currently pursuing a Master's degree in Cybersecurity
+                    and Digital Forensics, where I am developing a deeper
+                    interest in cybersecurity research, digital investigations
+                    and emerging technology challenges.
+                </p>
+
+                <p>
+                    My interests include cybersecurity operations, network
+                    security, digital forensics, incident response,
+                    vulnerability assessment and cybercrime investigation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+        <div class="section-container">
+
+            <div class="section-title">
+                <h2>Experience & Education</h2>
+                <p>My academic and practical background</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Education</h3>
+
+                    <h4>
+                        Master's in Cybersecurity and Digital Forensics
+                    </h4>
+
+                    <p class="date">
+                        Current
+                    </p>
+
+                    <p>
+                        Advanced study in cybersecurity, digital forensics,
+                        research methodology and information security.
+                    </p>
+
+                    <br>
+
+                    <h4>
+                        Bachelor of Science in Applied Computing
+                    </h4>
+
+                    <p class="date">
+                        KCA University • 2021 – 2025
+                    </p>
+
+                    <p>
+                        Specialization in Information Security and Digital
+                        Forensics. Second Class Upper Division.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>ICT Experience</h3>
+
+                    <h4>
+                        ICT Officer — Attachee
+                    </h4>
+
+                    <p class="date">
+                        Ministry of Information, Communication and the
+                        Digital Economy
+                    </p>
+
+                    <p>
+                        Provided technical support, network troubleshooting,
+                        software installation, system support, Windows
+                        administration, data recovery and general ICT
+                        assistance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="section-container">
+
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+                <p>Technologies and areas I work with</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-box">
+
+                    <h3>Cybersecurity</h3>
+
+                    <ul>
+                        <li>Network Security</li>
+                        <li>Vulnerability Assessment</li>
+                        <li>Incident Response</li>
+                        <li>Threat Analysis</li>
+                        <li>OWASP Top 10</li>
+                        <li>Security Monitoring</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>Digital Forensics</h3>
+
+                    <ul>
+                        <li>Digital Investigations</li>
+                        <li>Evidence Handling</li>
+                        <li>Data Recovery</li>
+                        <li>Windows Forensics</li>
+                        <li>Network Analysis</li>
+                        <li>Cybercrime Investigation</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>Tools & Technologies</h3>
+
+                    <ul>
+                        <li>Linux / Kali Linux
 ```

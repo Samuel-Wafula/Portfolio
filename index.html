@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,40 +6,49 @@
 
     <title>Samuel Simiyu | Cybersecurity & Digital Forensics</title>
 
-    <meta name="description" content="Samuel Simiyu - Cybersecurity and Digital Forensics professional, researcher, and IT specialist.">
+    <meta name="description"
+          content="Samuel Simiyu - Cybersecurity and Digital Forensics professional, researcher and IT specialist.">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0b1120;
+            background: #08111f;
             color: #e5e7eb;
             line-height: 1.7;
         }
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================== */
+
         nav {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: #0f172a;
-            border-bottom: 1px solid #1e293b;
-            padding: 18px 8%;
+            z-index: 9999;
+            background: #0b1628;
+            border-bottom: 1px solid #24344d;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
+            color: #38bdf8;
             font-size: 22px;
             font-weight: bold;
-            color: #38bdf8;
+            text-decoration: none;
         }
 
         nav ul {
@@ -49,32 +57,36 @@
             gap: 25px;
         }
 
-        nav a {
+        nav ul li a {
             color: #cbd5e1;
             text-decoration: none;
             font-size: 15px;
+            font-weight: 500;
             transition: 0.3s;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             color: #38bdf8;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
             min-height: 90vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 70px 8%;
+            padding: 80px 7%;
             background:
-                radial-gradient(circle at top right, #123b5d 0%, transparent 35%),
-                linear-gradient(135deg, #0b1120, #111827);
+                radial-gradient(circle at 80% 20%, #123c5a 0%, transparent 30%),
+                linear-gradient(135deg, #08111f, #101c30);
         }
 
         .hero-container {
-            max-width: 1150px;
             width: 100%;
+            max-width: 1150px;
+            margin: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -85,20 +97,20 @@
             flex: 1;
         }
 
-        .hero-text .small-title {
+        .small-title {
             color: #38bdf8;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             letter-spacing: 2px;
-            margin-bottom: 15px;
             text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 58px;
+            font-size: 60px;
             line-height: 1.1;
-            margin-bottom: 20px;
             color: #f8fafc;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
@@ -106,30 +118,30 @@
         }
 
         .hero p {
-            font-size: 19px;
+            max-width: 680px;
             color: #94a3b8;
-            max-width: 650px;
+            font-size: 19px;
             margin-bottom: 30px;
         }
 
         .buttons {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
         .btn {
             display: inline-block;
-            padding: 13px 24px;
-            border-radius: 7px;
             text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 7px;
             font-weight: bold;
             transition: 0.3s;
         }
 
         .btn-primary {
             background: #38bdf8;
-            color: #06121c;
+            color: #06111c;
         }
 
         .btn-primary:hover {
@@ -138,7 +150,7 @@
         }
 
         .btn-secondary {
-            border: 1px solid #334155;
+            border: 1px solid #475569;
             color: #e2e8f0;
         }
 
@@ -147,7 +159,10 @@
             color: #38bdf8;
         }
 
-        /* PROFILE IMAGE */
+        /* =========================
+           PROFILE IMAGE
+        ========================== */
+
         .profile-container {
             flex: 0 0 320px;
             text-align: center;
@@ -162,9 +177,12 @@
             box-shadow: 0 0 45px rgba(56, 189, 248, 0.25);
         }
 
-        /* SECTIONS */
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
         section {
-            padding: 90px 8%;
+            padding: 90px 7%;
         }
 
         .section-container {
@@ -187,10 +205,13 @@
             color: #94a3b8;
         }
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================== */
+
         .about-box {
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: #101b2d;
+            border: 1px solid #24344d;
             border-radius: 12px;
             padding: 35px;
         }
@@ -200,7 +221,10 @@
             margin-bottom: 15px;
         }
 
-        /* CARDS */
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
         .cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -208,8 +232,8 @@
         }
 
         .card {
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: #101b2d;
+            border: 1px solid #24344d;
             border-radius: 12px;
             padding: 30px;
             transition: 0.3s;
@@ -218,18 +242,17 @@
         .card:hover {
             transform: translateY(-5px);
             border-color: #38bdf8;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
 
         .card h3 {
             color: #38bdf8;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 21px;
         }
 
         .card h4 {
             color: #f8fafc;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
         }
 
         .card p {
@@ -242,7 +265,10 @@
             margin-bottom: 12px;
         }
 
-        /* SKILLS */
+        /* =========================
+           SKILLS
+        ========================== */
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -250,10 +276,10 @@
         }
 
         .skill-box {
-            background: #111827;
-            border: 1px solid #1e293b;
-            padding: 25px;
+            background: #101b2d;
+            border: 1px solid #24344d;
             border-radius: 10px;
+            padding: 25px;
         }
 
         .skill-box h3 {
@@ -275,19 +301,28 @@
             color: #38bdf8;
         }
 
-        /* PROJECTS */
+        /* =========================
+           PROJECTS
+        ========================== */
+
         .project-card {
-            background: #111827;
-            border: 1px solid #1e293b;
+            background: #101b2d;
+            border: 1px solid #24344d;
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-3px);
         }
 
         .project-card h3 {
             color: #38bdf8;
-            margin-bottom: 10px;
             font-size: 22px;
+            margin-bottom: 10px;
         }
 
         .project-card p {
@@ -301,13 +336,16 @@
             font-weight: bold;
         }
 
-        /* RESEARCH */
+        /* =========================
+           RESEARCH
+        ========================== */
+
         .research {
-            background: #0f172a;
+            background: #0c1728;
         }
 
         .research-box {
-            background: #111827;
+            background: #101b2d;
             border-left: 4px solid #38bdf8;
             padding: 35px;
             border-radius: 8px;
@@ -315,21 +353,24 @@
 
         .research-box h3 {
             color: #38bdf8;
-            margin-bottom: 15px;
             font-size: 24px;
+            margin-bottom: 15px;
         }
 
         .research-box p {
             color: #cbd5e1;
         }
 
-        /* CONTACT */
+        /* =========================
+           CONTACT
+        ========================== */
+
         .contact-box {
-            text-align: center;
-            background: #111827;
-            border: 1px solid #1e293b;
-            padding: 45px;
+            background: #101b2d;
+            border: 1px solid #24344d;
             border-radius: 12px;
+            padding: 45px;
+            text-align: center;
         }
 
         .contact-box p {
@@ -340,34 +381,48 @@
         .contact-links {
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             gap: 15px;
         }
 
         .contact-links a {
+            display: inline-block;
             color: #38bdf8;
             text-decoration: none;
-            border: 1px solid #334155;
-            padding: 10px 18px;
-            border-radius: 6px;
+            border: 1px solid #475569;
+            padding: 11px 20px;
+            border-radius: 7px;
             transition: 0.3s;
         }
 
         .contact-links a:hover {
             background: #38bdf8;
-            color: #06121c;
+            color: #06111c;
+            border-color: #38bdf8;
         }
 
-        /* FOOTER */
+        .phone-number {
+            margin-top: 25px;
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
         footer {
             text-align: center;
             padding: 30px;
-            background: #070b14;
+            background: #050b14;
             color: #64748b;
             font-size: 14px;
         }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================== */
+
         @media (max-width: 800px) {
 
             nav {
@@ -387,7 +442,7 @@
             }
 
             .hero h1 {
-                font-size: 42px;
+                font-size: 43px;
             }
 
             .hero p {
@@ -415,29 +470,60 @@
             section {
                 padding: 65px 6%;
             }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <nav>
-        <div class="logo">Samuel Simiyu</div>
+
+        <a href="#home" class="logo">
+            Samuel Simiyu
+        </a>
 
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#research">Research</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
         </ul>
+
     </nav>
 
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- =========================
+         HOME / HERO
+    ========================== -->
+
+    <section class="hero" id="home">
 
         <div class="hero-container">
 
@@ -458,13 +544,15 @@
                 </p>
 
                 <div class="buttons">
+
                     <a href="#projects" class="btn btn-primary">
-                        View My Work
+                        View My Projects
                     </a>
 
                     <a href="#contact" class="btn btn-secondary">
                         Contact Me
                     </a>
+
                 </div>
 
             </div>
@@ -481,14 +569,22 @@
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
     <section id="about">
 
         <div class="section-container">
 
             <div class="section-title">
+
                 <h2>About Me</h2>
-                <p>Cybersecurity, technology and continuous learning</p>
+
+                <p>
+                    Cybersecurity, technology and continuous learning
+                </p>
+
             </div>
 
             <div class="about-box">
@@ -520,14 +616,22 @@
     </section>
 
 
-    <!-- EXPERIENCE -->
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
     <section id="experience">
 
         <div class="section-container">
 
             <div class="section-title">
+
                 <h2>Experience & Education</h2>
-                <p>My academic and practical background</p>
+
+                <p>
+                    My academic and practical background
+                </p>
+
             </div>
 
             <div class="cards">
@@ -541,7 +645,7 @@
                     </h4>
 
                     <p class="date">
-                        Current
+                        Currently Pursuing
                     </p>
 
                     <p>
@@ -582,9 +686,8 @@
 
                     <p>
                         Provided technical support, network troubleshooting,
-                        software installation, system support, Windows
-                        administration, data recovery and general ICT
-                        assistance.
+                        software installation, Windows administration,
+                        data recovery and general ICT assistance.
                     </p>
 
                 </div>
@@ -596,15 +699,24 @@
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
     <section id="skills">
 
         <div class="section-container">
 
             <div class="section-title">
+
                 <h2>Technical Skills</h2>
-                <p>Technologies and areas I work with</p>
+
+                <p>
+                    Technologies and areas I work with
+                </p>
+
             </div>
+
 
             <div class="skills-grid">
 
@@ -645,5 +757,64 @@
                     <h3>Tools & Technologies</h3>
 
                     <ul>
-                        <li>Linux / Kali Linux
+                        <li>Linux / Kali Linux</li>
+                        <li>Python</li>
+                        <li>Nmap</li>
+                        <li>Wireshark</li>
+                        <li>Burp Suite</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Projects</h2>
+
+                <p>
+                    Selected technical projects
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Garage Management System
+                </h3>
+
+                <p>
+                    Developed a web-based garage management system that
+                    allows clients to book appointments, view service
+                    information and maintain service history while providing
+                    administrators with management functionality.
+                </p>
+
+                <div class="tech">
+                    PHP • MySQL • HTML • CSS • JavaScript
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Python Network Vulnerability Scanner
 ```
